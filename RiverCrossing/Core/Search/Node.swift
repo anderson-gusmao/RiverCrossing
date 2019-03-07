@@ -12,18 +12,11 @@ final class Node<T> {
     
     enum State { case failed, inProgress }
     
-    var children = [Node]()
     private(set) var state = State.inProgress
     var value: T?
-    var hasChindren: Bool { return children.count > 0 }
     
-    init(children: [Node] = [Node](), value: T? = nil) {
-        self.children = children
+    init(value: T? = nil) {
         self.value = value
-    }
-    
-    func add(child: Node) {
-        children.append(child)
     }
     
     func setFailed() {
