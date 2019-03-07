@@ -10,6 +10,7 @@
 		B4A24FFB222C36D200DDBC86 /* main.swift in Sources */ = {isa = PBXBuildFile; fileRef = B4A24FFA222C36D200DDBC86 /* main.swift */; };
 		B4A250102230884C00DDBC86 /* Engine.swift in Sources */ = {isa = PBXBuildFile; fileRef = B4A2500F2230884C00DDBC86 /* Engine.swift */; };
 		B4A2501322308A8A00DDBC86 /* Node.swift in Sources */ = {isa = PBXBuildFile; fileRef = B4A2501222308A8A00DDBC86 /* Node.swift */; };
+		B4A250152230941D00DDBC86 /* Combine.swift in Sources */ = {isa = PBXBuildFile; fileRef = B4A250142230941D00DDBC86 /* Combine.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXCopyFilesBuildPhase section */
@@ -29,6 +30,7 @@
 		B4A24FFA222C36D200DDBC86 /* main.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = main.swift; sourceTree = "<group>"; };
 		B4A2500F2230884C00DDBC86 /* Engine.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Engine.swift; sourceTree = "<group>"; };
 		B4A2501222308A8A00DDBC86 /* Node.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Node.swift; sourceTree = "<group>"; };
+		B4A250142230941D00DDBC86 /* Combine.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Combine.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -80,6 +82,7 @@
 			isa = PBXGroup;
 			children = (
 				B4A2501222308A8A00DDBC86 /* Node.swift */,
+				B4A250142230941D00DDBC86 /* Combine.swift */,
 			);
 			path = Search;
 			sourceTree = "<group>";
@@ -142,6 +145,7 @@
 			buildActionMask = 2147483647;
 			files = (
 				B4A2501322308A8A00DDBC86 /* Node.swift in Sources */,
+				B4A250152230941D00DDBC86 /* Combine.swift in Sources */,
 				B4A24FFB222C36D200DDBC86 /* main.swift in Sources */,
 				B4A250102230884C00DDBC86 /* Engine.swift in Sources */,
 			);
