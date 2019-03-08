@@ -8,14 +8,18 @@
 
 import Foundation
 
-final class Node<T> {
+final class Node<T>: CustomStringConvertible {
+    
+    var description: String {
+        return "\(self.value) = \(state)"
+    }
     
     enum State { case failed, inProgress }
     
     private(set) var state = State.inProgress
-    var value: T?
+    var value: T
     
-    init(value: T? = nil) {
+    init(value: T) {
         self.value = value
     }
     

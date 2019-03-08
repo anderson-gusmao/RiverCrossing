@@ -34,7 +34,6 @@ private extension Combine {
         let subcombos = combos(elements: elements, k: k - 1)
         var ret = subcombos.map { head + $0 }
         ret += combos(elements: elements.dropFirst(), k: k)
-        
         return ret
     }
     
