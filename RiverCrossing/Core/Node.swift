@@ -11,19 +11,20 @@ import Foundation
 final class Node<T>: CustomStringConvertible {
     
     var description: String {
-        return "\(self.value) = \(state)"
+        return "\(self.value) = \(status)"
     }
     
-    enum State { case failed, inProgress }
+    enum Status { case failed, inProgress }
     
-    private(set) var state = State.inProgress
+    private(set) var status = Status.inProgress
     var value: T
+    var parent: Node<T>?
     
     init(value: T) {
         self.value = value
     }
     
     func setFailed() {
-        state = .failed
+        status = .failed
     }
 }
