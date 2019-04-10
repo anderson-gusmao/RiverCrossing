@@ -1,3 +1,5 @@
-
-os: osx
-
+language: swift
+xcode_project: RiverCrossing.xcodeproj
+xcode_scheme: RiverCrossing
+xcode_destination: platform=macOS
+osx_image: xcode10.1

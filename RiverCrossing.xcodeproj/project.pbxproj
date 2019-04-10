@@ -7,6 +7,7 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		A7D39EFD225E45BA003E083C /* UnitTesting.swift in Sources */ = {isa = PBXBuildFile; fileRef = A7D39EFC225E45BA003E083C /* UnitTesting.swift */; };
 		B4A24FFB222C36D200DDBC86 /* main.swift in Sources */ = {isa = PBXBuildFile; fileRef = B4A24FFA222C36D200DDBC86 /* main.swift */; };
 		B4A250102230884C00DDBC86 /* Engine.swift in Sources */ = {isa = PBXBuildFile; fileRef = B4A2500F2230884C00DDBC86 /* Engine.swift */; };
 		B4A2501322308A8A00DDBC86 /* Node.swift in Sources */ = {isa = PBXBuildFile; fileRef = B4A2501222308A8A00DDBC86 /* Node.swift */; };
@@ -29,6 +30,9 @@
 /* End PBXCopyFilesBuildPhase section */
 
 /* Begin PBXFileReference section */
+		A7D39EFA225E45BA003E083C /* UnitTesting.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = UnitTesting.xctest; sourceTree = BUILT_PRODUCTS_DIR; };
+		A7D39EFC225E45BA003E083C /* UnitTesting.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = UnitTesting.swift; sourceTree = "<group>"; };
+		A7D39EFE225E45BA003E083C /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		B4A24FF7222C36D200DDBC86 /* RiverCrossing */ = {isa = PBXFileReference; explicitFileType = "compiled.mach-o.executable"; includeInIndex = 0; path = RiverCrossing; sourceTree = BUILT_PRODUCTS_DIR; };
 		B4A24FFA222C36D200DDBC86 /* main.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = main.swift; sourceTree = "<group>"; };
 		B4A2500F2230884C00DDBC86 /* Engine.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Engine.swift; sourceTree = "<group>"; };
@@ -40,6 +44,13 @@
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
+		A7D39EF7225E45BA003E083C /* Frameworks */ = {
+			isa = PBXFrameworksBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
 		B4A24FF4222C36D200DDBC86 /* Frameworks */ = {
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
@@ -50,10 +61,20 @@
 /* End PBXFrameworksBuildPhase section */
 
 /* Begin PBXGroup section */
+		A7D39EFB225E45BA003E083C /* UnitTesting */ = {
+			isa = PBXGroup;
+			children = (
+				A7D39EFC225E45BA003E083C /* UnitTesting.swift */,
+				A7D39EFE225E45BA003E083C /* Info.plist */,
+			);
+			path = UnitTesting;
+			sourceTree = "<group>";
+		};
 		B4A24FEE222C36D100DDBC86 = {
 			isa = PBXGroup;
 			children = (
 				B4A24FF9222C36D200DDBC86 /* RiverCrossing */,
+				A7D39EFB225E45BA003E083C /* UnitTesting */,
 				B4A24FF8222C36D200DDBC86 /* Products */,
 			);
 			sourceTree = "<group>";
@@ -62,6 +83,7 @@
 			isa = PBXGroup;
 			children = (
 				B4A24FF7222C36D200DDBC86 /* RiverCrossing */,
+				A7D39EFA225E45BA003E083C /* UnitTesting.xctest */,
 			);
 			name = Products;
 			sourceTree = "<group>";
@@ -99,6 +121,23 @@
 /* End PBXGroup section */
 
 /* Begin PBXNativeTarget section */
+		A7D39EF9225E45BA003E083C /* UnitTesting */ = {
+			isa = PBXNativeTarget;
+			buildConfigurationList = A7D39F01225E45BA003E083C /* Build configuration list for PBXNativeTarget "UnitTesting" */;
+			buildPhases = (
+				A7D39EF6225E45BA003E083C /* Sources */,
+				A7D39EF7225E45BA003E083C /* Frameworks */,
+				A7D39EF8225E45BA003E083C /* Resources */,
+			);
+			buildRules = (
+			);
+			dependencies = (
+			);
+			name = UnitTesting;
+			productName = UnitTesting;
+			productReference = A7D39EFA225E45BA003E083C /* UnitTesting.xctest */;
+			productType = "com.apple.product-type.bundle.unit-test";
+		};
 		B4A24FF6222C36D200DDBC86 /* RiverCrossing */ = {
 			isa = PBXNativeTarget;
 			buildConfigurationList = B4A24FFE222C36D200DDBC86 /* Build configuration list for PBXNativeTarget "RiverCrossing" */;
@@ -126,6 +165,9 @@
 				LastUpgradeCheck = 1010;
 				ORGANIZATIONNAME = "Anderson Santos Gusmão";
 				TargetAttributes = {
+					A7D39EF9225E45BA003E083C = {
+						CreatedOnToolsVersion = 10.1;
+					};
 					B4A24FF6222C36D200DDBC86 = {
 						CreatedOnToolsVersion = 10.1;
 					};
@@ -144,11 +186,30 @@
 			projectRoot = "";
 			targets = (
 				B4A24FF6222C36D200DDBC86 /* RiverCrossing */,
+				A7D39EF9225E45BA003E083C /* UnitTesting */,
 			);
 		};
 /* End PBXProject section */
 
+/* Begin PBXResourcesBuildPhase section */
+		A7D39EF8225E45BA003E083C /* Resources */ = {
+			isa = PBXResourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+/* End PBXResourcesBuildPhase section */
+
 /* Begin PBXSourcesBuildPhase section */
+		A7D39EF6225E45BA003E083C /* Sources */ = {
+			isa = PBXSourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				A7D39EFD225E45BA003E083C /* UnitTesting.swift in Sources */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
 		B4A24FF3222C36D200DDBC86 /* Sources */ = {
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
@@ -166,6 +227,46 @@
 /* End PBXSourcesBuildPhase section */
 
 /* Begin XCBuildConfiguration section */
+		A7D39EFF225E45BA003E083C /* Debug */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				CODE_SIGN_IDENTITY = "-";
+				CODE_SIGN_STYLE = Automatic;
+				COMBINE_HIDPI_IMAGES = YES;
+				DEVELOPMENT_TEAM = "";
+				INFOPLIST_FILE = UnitTesting/Info.plist;
+				LD_RUNPATH_SEARCH_PATHS = (
+					"$(inherited)",
+					"@executable_path/../Frameworks",
+					"@loader_path/../Frameworks",
+				);
+				MACOSX_DEPLOYMENT_TARGET = 10.13;
+				PRODUCT_BUNDLE_IDENTIFIER = com.demo.UnitTesting;
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				SWIFT_VERSION = 4.2;
+			};
+			name = Debug;
+		};
+		A7D39F00225E45BA003E083C /* Release */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				CODE_SIGN_IDENTITY = "-";
+				CODE_SIGN_STYLE = Automatic;
+				COMBINE_HIDPI_IMAGES = YES;
+				DEVELOPMENT_TEAM = "";
+				INFOPLIST_FILE = UnitTesting/Info.plist;
+				LD_RUNPATH_SEARCH_PATHS = (
+					"$(inherited)",
+					"@executable_path/../Frameworks",
+					"@loader_path/../Frameworks",
+				);
+				MACOSX_DEPLOYMENT_TARGET = 10.13;
+				PRODUCT_BUNDLE_IDENTIFIER = com.demo.UnitTesting;
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				SWIFT_VERSION = 4.2;
+			};
+			name = Release;
+		};
 		B4A24FFC222C36D200DDBC86 /* Debug */ = {
 			isa = XCBuildConfiguration;
 			buildSettings = {
@@ -284,8 +385,9 @@
 		B4A24FFF222C36D200DDBC86 /* Debug */ = {
 			isa = XCBuildConfiguration;
 			buildSettings = {
+				CODE_SIGN_IDENTITY = "-";
 				CODE_SIGN_STYLE = Automatic;
-				DEVELOPMENT_TEAM = 3ET68Q56D7;
+				DEVELOPMENT_TEAM = "";
 				PRODUCT_NAME = "$(TARGET_NAME)";
 				SWIFT_VERSION = 4.2;
 			};
@@ -294,8 +396,9 @@
 		B4A25000222C36D200DDBC86 /* Release */ = {
 			isa = XCBuildConfiguration;
 			buildSettings = {
+				CODE_SIGN_IDENTITY = "-";
 				CODE_SIGN_STYLE = Automatic;
-				DEVELOPMENT_TEAM = 3ET68Q56D7;
+				DEVELOPMENT_TEAM = "";
 				PRODUCT_NAME = "$(TARGET_NAME)";
 				SWIFT_VERSION = 4.2;
 			};
@@ -304,6 +407,15 @@
 /* End XCBuildConfiguration section */
 
 /* Begin XCConfigurationList section */
+		A7D39F01225E45BA003E083C /* Build configuration list for PBXNativeTarget "UnitTesting" */ = {
+			isa = XCConfigurationList;
+			buildConfigurations = (
+				A7D39EFF225E45BA003E083C /* Debug */,
+				A7D39F00225E45BA003E083C /* Release */,
+			);
+			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
+		};
 		B4A24FF2222C36D200DDBC86 /* Build configuration list for PBXProject "RiverCrossing" */ = {
 			isa = XCConfigurationList;
 			buildConfigurations = (
