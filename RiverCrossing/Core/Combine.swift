@@ -13,33 +13,17 @@ final class Combine {
     func generateChildren(state: State) -> [State] {
         switch state.direction {
         case .leftToRight:
-            return createNewStates(leaving: state.leftSide, staying: state.rightSide, direction: state.direction)
+            return calculatePossibilities(leaving: state.leftSide, staying: state.rightSide, direction: state.direction)
         case .rightToLeft:
-            return createNewStates(leaving: state.rightSide, staying: state.leftSide, direction: state.direction)
+            return calculatePossibilities(leaving: state.rightSide, staying: state.leftSide, direction: state.direction)
         }
     }
 }
 
 private extension Combine {
     
-    func createNewStates(leaving: [String], staying: [String], direction: State.Direction) -> [State] {
-        var possibilities = [[String]]()
+    func createNewStates(possibilities: [[String]], leaving: [String], staying: [String], direction: State.Direction) -> [State] {
         var states = [State]()
-        
-        for i in 0...leaving.count-1 {
-            guard leaving.count > 1 else {
-                possibilities = [leaving]
-                break
-            }
-            let p1 = [leaving[i]]
-            if !possibilities.contains(p1) { possibilities.append(p1) }
-            for j in i...leaving.count-1 {
-                let p1 = leaving[i]
-                let p2 = leaving[j]
-                if !possibilities.contains([p1, p2]) { possibilities.append([p1, p2]) }
-            }
-        }
-        
         possibilities.forEach { possibility in
             var newLeaving = leaving
             var newStaying = staying
@@ -56,7 +40,27 @@ private extension Combine {
             }
             
         }
-        
         return states
+    }
+    
+    func calculatePossibilities(leaving: [String], staying: [String], direction: State.Direction) -> [State] {
+        var possibilities = [[String]]()
+        
+        for i in 0...leaving.length {
+            guard leaving.count > 1 else {
+                possibilities = [leaving]
+                break
+            }
+            if !possibilities.contains([leaving[i]]) {
+                possibilities.append([leaving[i]])
+            }
+            for j in i...leaving.length {
+                if !possibilities.contains([leaving[i], leaving[j]]) {
+                    possibilities.append([leaving[i], leaving[j]])
+                }
+            }
+        }
+        
+        return createNewStates(possibilities: possibilities, leaving: leaving, staying: staying, direction: direction)
     }
 }

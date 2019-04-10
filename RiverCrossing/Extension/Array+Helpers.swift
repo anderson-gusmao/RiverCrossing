@@ -23,4 +23,8 @@ extension Array where Iterator.Element == String {
         guard count > 1 && missionariesQuantity > 0 else { return  true }
         return cannibalQuantity <= missionariesQuantity
     }
+    
+    var length: Int {
+        return count - 1
+    }
 }
