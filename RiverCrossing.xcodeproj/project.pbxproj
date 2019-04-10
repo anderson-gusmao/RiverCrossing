@@ -15,6 +15,12 @@
 		B4A250172231DFC700DDBC86 /* Queue.swift in Sources */ = {isa = PBXBuildFile; fileRef = B4A250162231DFC700DDBC86 /* Queue.swift */; };
 		B4BC6E3E22581BC30016E7DB /* State.swift in Sources */ = {isa = PBXBuildFile; fileRef = B4BC6E3D22581BC30016E7DB /* State.swift */; };
 		B4BC6E41225906500016E7DB /* Array+Helpers.swift in Sources */ = {isa = PBXBuildFile; fileRef = B4BC6E40225906500016E7DB /* Array+Helpers.swift */; };
+		B4BC6E43225EB0830016E7DB /* Node.swift in Sources */ = {isa = PBXBuildFile; fileRef = B4A2501222308A8A00DDBC86 /* Node.swift */; };
+		B4BC6E44225EB0830016E7DB /* Combine.swift in Sources */ = {isa = PBXBuildFile; fileRef = B4A250142230941D00DDBC86 /* Combine.swift */; };
+		B4BC6E45225EB0830016E7DB /* Engine.swift in Sources */ = {isa = PBXBuildFile; fileRef = B4A2500F2230884C00DDBC86 /* Engine.swift */; };
+		B4BC6E46225EB0830016E7DB /* Queue.swift in Sources */ = {isa = PBXBuildFile; fileRef = B4A250162231DFC700DDBC86 /* Queue.swift */; };
+		B4BC6E47225EB0830016E7DB /* State.swift in Sources */ = {isa = PBXBuildFile; fileRef = B4BC6E3D22581BC30016E7DB /* State.swift */; };
+		B4BC6E48225EB0860016E7DB /* Array+Helpers.swift in Sources */ = {isa = PBXBuildFile; fileRef = B4BC6E40225906500016E7DB /* Array+Helpers.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXCopyFilesBuildPhase section */
@@ -206,6 +212,13 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				B4BC6E46225EB0830016E7DB /* Queue.swift in Sources */,
+				B4BC6E44225EB0830016E7DB /* Combine.swift in Sources */,
+				B4BC6E45225EB0830016E7DB /* Engine.swift in Sources */,
+				B4BC6E48225EB0860016E7DB /* Array+Helpers.swift in Sources */,
+				A7D39EFD225E45BA003E083C /* UnitTesting.swift in Sources */,
+				B4BC6E43225EB0830016E7DB /* Node.swift in Sources */,
+				B4BC6E47225EB0830016E7DB /* State.swift in Sources */,
 				A7D39EFD225E45BA003E083C /* UnitTesting.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
@@ -240,7 +253,7 @@
 					"@executable_path/../Frameworks",
 					"@loader_path/../Frameworks",
 				);
-				MACOSX_DEPLOYMENT_TARGET = 10.13;
+				MACOSX_DEPLOYMENT_TARGET = 10.9;
 				PRODUCT_BUNDLE_IDENTIFIER = com.demo.UnitTesting;
 				PRODUCT_NAME = "$(TARGET_NAME)";
 				SWIFT_VERSION = 4.2;
@@ -260,7 +273,7 @@
 					"@executable_path/../Frameworks",
 					"@loader_path/../Frameworks",
 				);
-				MACOSX_DEPLOYMENT_TARGET = 10.13;
+				MACOSX_DEPLOYMENT_TARGET = 10.9;
 				PRODUCT_BUNDLE_IDENTIFIER = com.demo.UnitTesting;
 				PRODUCT_NAME = "$(TARGET_NAME)";
 				SWIFT_VERSION = 4.2;
@@ -318,7 +331,7 @@
 				GCC_WARN_UNINITIALIZED_AUTOS = YES_AGGRESSIVE;
 				GCC_WARN_UNUSED_FUNCTION = YES;
 				GCC_WARN_UNUSED_VARIABLE = YES;
-				MACOSX_DEPLOYMENT_TARGET = 10.14;
+				MACOSX_DEPLOYMENT_TARGET = 10.9;
 				MTL_ENABLE_DEBUG_INFO = INCLUDE_SOURCE;
 				MTL_FAST_MATH = YES;
 				ONLY_ACTIVE_ARCH = YES;
@@ -373,7 +386,7 @@
 				GCC_WARN_UNINITIALIZED_AUTOS = YES_AGGRESSIVE;
 				GCC_WARN_UNUSED_FUNCTION = YES;
 				GCC_WARN_UNUSED_VARIABLE = YES;
-				MACOSX_DEPLOYMENT_TARGET = 10.14;
+				MACOSX_DEPLOYMENT_TARGET = 10.9;
 				MTL_ENABLE_DEBUG_INFO = NO;
 				MTL_FAST_MATH = YES;
 				SDKROOT = macosx;
@@ -388,6 +401,7 @@
 				CODE_SIGN_IDENTITY = "-";
 				CODE_SIGN_STYLE = Automatic;
 				DEVELOPMENT_TEAM = "";
+				MACOSX_DEPLOYMENT_TARGET = 10.9;
 				PRODUCT_NAME = "$(TARGET_NAME)";
 				SWIFT_VERSION = 4.2;
 			};
@@ -399,6 +413,7 @@
 				CODE_SIGN_IDENTITY = "-";
 				CODE_SIGN_STYLE = Automatic;
 				DEVELOPMENT_TEAM = "";
+				MACOSX_DEPLOYMENT_TARGET = 10.9;
 				PRODUCT_NAME = "$(TARGET_NAME)";
 				SWIFT_VERSION = 4.2;
 			};
