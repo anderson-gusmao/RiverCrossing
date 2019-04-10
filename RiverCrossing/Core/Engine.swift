@@ -10,47 +10,50 @@ import Foundation
 
 final class Engine {
     
-    static let cannibal = "C"
-    static let missionary = "M"
+    var solution = String()
+    let initalState: State
     
-    private var rightSide = [cannibal, cannibal, cannibal, missionary, missionary, missionary]
-    private var leftSide = [String]()
+    init(initialState:  State) {
+        self.initalState = initialState
+    }
     
-    func run() {
-        let possibilities = Combine(input: rightSide).generate().map({ Node(value: $0) })
-        enqueue(elements: possibilities)
+    func run() -> String {
+        var queue = Queue<Node<State>>()
+        queue.enqueue(Node<State>(value: initalState))
+        return process(&queue)
     }
 }
 
 private extension Engine {
     
-    func enqueue(elements: [Node<[String]>]) {
-        var queue = Queue<Node<[String]>>()
-        elements.forEach{ queue.enqueue($0) }
-        process(&queue)
-    }
-    
-    func process(_ queue: inout Queue<Node<[String]>>) {
-        while let node = queue.dequeue() {
-            
-            var tempRightSide = rightSide
-            var tempLeftSide = leftSide
-            
-            node.value.forEach({ //Moving to the other side
-                guard let i = tempRightSide.firstIndex(of: $0) else { return }
-                tempLeftSide.append(tempRightSide.remove(at: i))
-            })
-            
-            if !evaluate(rightSide: tempRightSide, leftSide: tempLeftSide) {
-                node.setFailed()
+    func process(_ queue: inout Queue<Node<State>>) -> String {
+        while let item = queue.dequeue(), solution.isEmpty {
+            Combine().generateChildren(state: item.value).forEach {
+                if $0.isSafe {
+                    let newNode = Node<State>(value: $0, parent: item)
+                    if $0.isSolved {
+                         solution = buildSolution(node: newNode)
+                    } else {
+                        queue.enqueue(newNode)
+                    }
+                } else {
+                    item.setFailed()
+                }
             }
-            
-            print(node)
         }
+        return solution
     }
     
-    func evaluate(rightSide: [String], leftSide: [String]) -> Bool {
-        
-        return rightSide.isMissionariesSafe
+    func buildSolution(node: Node<State>?) -> String {
+        guard let parent = node?.parent else {
+            if let value = node?.value {
+                solution += value.description
+            }
+            return solution
+        }
+        if let value = node?.value {
+            solution += value.description
+        }
+        return buildSolution(node: parent)
     }
 }

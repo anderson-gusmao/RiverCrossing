@@ -9,25 +9,30 @@
 import Foundation
 
 struct Queue<T> {
+    
     private var array = [T]()
     
-    public var isEmpty: Bool {
+    var isEmpty: Bool {
         return array.isEmpty
     }
     
-    public var count: Int {
+    var count: Int {
         return array.count
     }
     
-    public mutating func enqueue(_ element: T) {
+    mutating func enqueue(_ element: T) {
         array.append(element)
     }
     
-    public mutating func dequeue() -> T? {
+    mutating func dequeue() -> T? {
         if isEmpty {
             return nil
         } else {
             return array.removeFirst()
         }
+    }
+    
+    mutating func clean() {
+        array.removeAll()
     }
 }
