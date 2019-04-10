@@ -10,7 +10,7 @@ import Foundation
 
 final class Combine {
     
-    func generateChindren(state: State) -> [State] {
+    func generateChildren(state: State) -> [State] {
         switch state.direction {
         case .leftToRight:
             return createNewStates(leaving: state.leftSide, staying: state.rightSide, direction: state.direction)

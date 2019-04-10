@@ -16,8 +16,9 @@ final class Node<T> {
     var value: T
     var parent: Node<T>?
     
-    init(value: T) {
+    init(value: T, parent: Node<T>? = nil) {
         self.value = value
+        self.parent = parent
     }
     
     func setFailed() {

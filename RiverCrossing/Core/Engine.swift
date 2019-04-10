@@ -28,13 +28,13 @@ private extension Engine {
     
     func process(_ queue: inout Queue<Node<State>>) -> String {
         while let item = queue.dequeue(), solution.isEmpty {
-            Combine().generateChindren(state: item.value).forEach {
+            Combine().generateChildren(state: item.value).forEach {
                 if $0.isSafe {
-                    let newNode = Node<State>(value: $0)
-                    newNode.parent = item
-                    queue.enqueue(newNode)
+                    let newNode = Node<State>(value: $0, parent: item)
                     if $0.isSolved {
-                         solution = printNode(node: newNode)
+                         solution = buildSolution(node: newNode)
+                    } else {
+                        queue.enqueue(newNode)
                     }
                 } else {
                     item.setFailed()
@@ -44,16 +44,16 @@ private extension Engine {
         return solution
     }
     
-    func printNode(node: Node<State>?) -> String {
+    func buildSolution(node: Node<State>?) -> String {
         guard let parent = node?.parent else {
             if let value = node?.value {
-                solution += "\(value.rightSide) \(value.direction.opposite.rawValue) \(value.leftSide)\n"
+                solution += value.description
             }
             return solution
         }
         if let value = node?.value {
-            solution += "\(value.rightSide) \(value.direction.opposite.rawValue) \(value.leftSide)\n"
+            solution += value.description
         }
-        return printNode(node: parent)
+        return buildSolution(node: parent)
     }
 }

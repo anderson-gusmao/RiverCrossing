@@ -30,4 +30,8 @@ struct State {
     var isSolved: Bool {
         return leftSide.count == 6
     }
+    
+    var description: String {
+        return "\(rightSide) \(direction.opposite.rawValue) \(leftSide)\n"
+    }
 }
