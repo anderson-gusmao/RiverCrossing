@@ -36,9 +36,7 @@ private extension Engine {
                     } else {
                         queue.enqueue(newNode)
                     }
-                } else {
-                    item.setFailed()
-                }
+                } 
             }
         }
         return solution

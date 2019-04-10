@@ -10,18 +10,11 @@ import Foundation
 
 final class Node<T> {
     
-    enum Status { case failed, inProgress }
-    
-    private(set) var status = Status.inProgress
     var value: T
     var parent: Node<T>?
     
     init(value: T, parent: Node<T>? = nil) {
         self.value = value
         self.parent = parent
-    }
-    
-    func setFailed() {
-        status = .failed
     }
 }

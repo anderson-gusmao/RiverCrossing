@@ -20,8 +20,7 @@ extension Array where Iterator.Element == String {
     }
     
     var isMissionariesSafe: Bool {
-        guard count > 1 && missionariesQuantity > 0 else { return  true }
-        return cannibalQuantity <= missionariesQuantity
+        return missionariesQuantity == 0 || missionariesQuantity >= cannibalQuantity
     }
     
     var length: Int {

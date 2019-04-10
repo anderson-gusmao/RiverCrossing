@@ -12,27 +12,15 @@ struct Queue<T> {
     
     private var array = [T]()
     
-    var isEmpty: Bool {
-        return array.isEmpty
-    }
-    
-    var count: Int {
-        return array.count
-    }
-    
     mutating func enqueue(_ element: T) {
         array.append(element)
     }
     
     mutating func dequeue() -> T? {
-        if isEmpty {
+        if array.isEmpty {
             return nil
         } else {
             return array.removeFirst()
         }
-    }
-    
-    mutating func clean() {
-        array.removeAll()
     }
 }
