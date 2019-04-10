@@ -10,49 +10,50 @@ import Foundation
 
 final class Engine {
     
-    let initalState = State(rightSide: ["C","C","C","M", "M","M"],
-                            leftSide: [],
-                            direction: State.Direction.rightToLeft)
+    var solution = String()
+    let initalState: State
     
-    func run() {
+    init(initialState:  State) {
+        self.initalState = initialState
+    }
+    
+    func run() -> String {
         var queue = Queue<Node<State>>()
-        Combine().generateChindren(state: initalState).forEach { queue.enqueue(Node<State>(value: $0)) }
-        process(&queue)
+        queue.enqueue(Node<State>(value: initalState))
+        return process(&queue)
     }
 }
 
 private extension Engine {
     
-    func process(_ queue: inout Queue<Node<State>>) {
-        while let item = queue.dequeue() {
-            var exit = false
+    func process(_ queue: inout Queue<Node<State>>) -> String {
+        while let item = queue.dequeue(), solution.isEmpty {
             Combine().generateChindren(state: item.value).forEach {
-                if $0.leftSide.isMissionariesSafe && $0.rightSide.isMissionariesSafe && $0.rightSide.count < 6 {
+                if $0.isSafe {
                     let newNode = Node<State>(value: $0)
                     newNode.parent = item
                     queue.enqueue(newNode)
-                    if $0.leftSide.count == 6 {
-                        printNode(node: newNode)
-                        exit = true
+                    if $0.isSolved {
+                         solution = printNode(node: newNode)
                     }
                 } else {
                     item.setFailed()
                 }
             }
-            if exit { break }
         }
+        return solution
     }
     
-    func printNode(node: Node<State>?) {
+    func printNode(node: Node<State>?) -> String {
         guard let parent = node?.parent else {
             if let value = node?.value {
-                print("\(value.rightSide) \(value.direction.opposite.rawValue) \(value.leftSide)")
+                solution += "\(value.rightSide) \(value.direction.opposite.rawValue) \(value.leftSide)\n"
             }
-            return
+            return solution
         }
         if let value = node?.value {
-            print("\(value.rightSide) \(value.direction.opposite.rawValue) \(value.leftSide)")
+            solution += "\(value.rightSide) \(value.direction.opposite.rawValue) \(value.leftSide)\n"
         }
-        printNode(node: parent)
+        return printNode(node: parent)
     }
 }

@@ -8,11 +8,7 @@
 
 import Foundation
 
-final class Node<T>: CustomStringConvertible {
-    
-    var description: String {
-        return "\(self.value) = \(status)"
-    }
+final class Node<T> {
     
     enum Status { case failed, inProgress }
     

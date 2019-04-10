@@ -22,4 +22,12 @@ struct State {
     let rightSide: [String]
     let leftSide: [String]
     let direction: Direction
+    
+    var isSafe: Bool {
+        return leftSide.isMissionariesSafe && rightSide.isMissionariesSafe
+    }
+    
+    var isSolved: Bool {
+        return leftSide.count == 6
+    }
 }
