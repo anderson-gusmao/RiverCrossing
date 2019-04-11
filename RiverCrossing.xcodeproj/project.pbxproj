@@ -47,6 +47,7 @@
 		B4A250162231DFC700DDBC86 /* Queue.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Queue.swift; sourceTree = "<group>"; };
 		B4BC6E3D22581BC30016E7DB /* State.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = State.swift; sourceTree = "<group>"; };
 		B4BC6E40225906500016E7DB /* Array+Helpers.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "Array+Helpers.swift"; sourceTree = "<group>"; };
+		B4BC6E4A225EBB3C0016E7DB /* Picture.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = Picture.png; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -97,6 +98,7 @@
 		B4A24FF9222C36D200DDBC86 /* RiverCrossing */ = {
 			isa = PBXGroup;
 			children = (
+				B4BC6E49225EBAF10016E7DB /* Resources */,
 				B4BC6E3F225906440016E7DB /* Extension */,
 				B4A2500E2230881900DDBC86 /* Core */,
 				B4A24FFA222C36D200DDBC86 /* main.swift */,
@@ -122,6 +124,14 @@
 				B4BC6E40225906500016E7DB /* Array+Helpers.swift */,
 			);
 			path = Extension;
+			sourceTree = "<group>";
+		};
+		B4BC6E49225EBAF10016E7DB /* Resources */ = {
+			isa = PBXGroup;
+			children = (
+				B4BC6E4A225EBB3C0016E7DB /* Picture.png */,
+			);
+			path = Resources;
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
