@@ -7,6 +7,11 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		A751C9AE225FEB6800F6A8EF /* DataDomainProtocol.swift in Sources */ = {isa = PBXBuildFile; fileRef = A751C9AD225FEB6800F6A8EF /* DataDomainProtocol.swift */; };
+		A751C9B0225FECC100F6A8EF /* DataDomain.swift in Sources */ = {isa = PBXBuildFile; fileRef = A751C9AF225FECC100F6A8EF /* DataDomain.swift */; };
+		A751C9B1225FF49900F6A8EF /* DataDomain.swift in Sources */ = {isa = PBXBuildFile; fileRef = A751C9AF225FECC100F6A8EF /* DataDomain.swift */; };
+		A751C9B2225FF49C00F6A8EF /* DataDomainProtocol.swift in Sources */ = {isa = PBXBuildFile; fileRef = A751C9AD225FEB6800F6A8EF /* DataDomainProtocol.swift */; };
+		A751C9B4225FF50600F6A8EF /* DataDomainTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = A751C9B3225FF50600F6A8EF /* DataDomainTests.swift */; };
 		A7D39EFD225E45BA003E083C /* UnitTesting.swift in Sources */ = {isa = PBXBuildFile; fileRef = A7D39EFC225E45BA003E083C /* UnitTesting.swift */; };
 		B4A24FFB222C36D200DDBC86 /* main.swift in Sources */ = {isa = PBXBuildFile; fileRef = B4A24FFA222C36D200DDBC86 /* main.swift */; };
 		B4A250102230884C00DDBC86 /* Engine.swift in Sources */ = {isa = PBXBuildFile; fileRef = B4A2500F2230884C00DDBC86 /* Engine.swift */; };
@@ -36,6 +41,9 @@
 /* End PBXCopyFilesBuildPhase section */
 
 /* Begin PBXFileReference section */
+		A751C9AD225FEB6800F6A8EF /* DataDomainProtocol.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DataDomainProtocol.swift; sourceTree = "<group>"; };
+		A751C9AF225FECC100F6A8EF /* DataDomain.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DataDomain.swift; sourceTree = "<group>"; };
+		A751C9B3225FF50600F6A8EF /* DataDomainTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DataDomainTests.swift; sourceTree = "<group>"; };
 		A7D39EFA225E45BA003E083C /* UnitTesting.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = UnitTesting.xctest; sourceTree = BUILT_PRODUCTS_DIR; };
 		A7D39EFC225E45BA003E083C /* UnitTesting.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = UnitTesting.swift; sourceTree = "<group>"; };
 		A7D39EFE225E45BA003E083C /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
@@ -68,11 +76,20 @@
 /* End PBXFrameworksBuildPhase section */
 
 /* Begin PBXGroup section */
+		A751C9AC225FD4D000F6A8EF /* Protocols */ = {
+			isa = PBXGroup;
+			children = (
+				A751C9AD225FEB6800F6A8EF /* DataDomainProtocol.swift */,
+			);
+			path = Protocols;
+			sourceTree = "<group>";
+		};
 		A7D39EFB225E45BA003E083C /* UnitTesting */ = {
 			isa = PBXGroup;
 			children = (
 				A7D39EFC225E45BA003E083C /* UnitTesting.swift */,
 				A7D39EFE225E45BA003E083C /* Info.plist */,
+				A751C9B3225FF50600F6A8EF /* DataDomainTests.swift */,
 			);
 			path = UnitTesting;
 			sourceTree = "<group>";
@@ -109,11 +126,13 @@
 		B4A2500E2230881900DDBC86 /* Core */ = {
 			isa = PBXGroup;
 			children = (
+				A751C9AC225FD4D000F6A8EF /* Protocols */,
 				B4A2501222308A8A00DDBC86 /* Node.swift */,
 				B4A250142230941D00DDBC86 /* Combine.swift */,
 				B4A2500F2230884C00DDBC86 /* Engine.swift */,
 				B4A250162231DFC700DDBC86 /* Queue.swift */,
 				B4BC6E3D22581BC30016E7DB /* State.swift */,
+				A751C9AF225FECC100F6A8EF /* DataDomain.swift */,
 			);
 			path = Core;
 			sourceTree = "<group>";
@@ -223,13 +242,16 @@
 			buildActionMask = 2147483647;
 			files = (
 				B4BC6E46225EB0830016E7DB /* Queue.swift in Sources */,
+				A751C9B4225FF50600F6A8EF /* DataDomainTests.swift in Sources */,
 				B4BC6E44225EB0830016E7DB /* Combine.swift in Sources */,
 				B4BC6E45225EB0830016E7DB /* Engine.swift in Sources */,
 				B4BC6E48225EB0860016E7DB /* Array+Helpers.swift in Sources */,
+				A751C9B1225FF49900F6A8EF /* DataDomain.swift in Sources */,
 				A7D39EFD225E45BA003E083C /* UnitTesting.swift in Sources */,
 				B4BC6E43225EB0830016E7DB /* Node.swift in Sources */,
 				B4BC6E47225EB0830016E7DB /* State.swift in Sources */,
 				A7D39EFD225E45BA003E083C /* UnitTesting.swift in Sources */,
+				A751C9B2225FF49C00F6A8EF /* DataDomainProtocol.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -241,9 +263,11 @@
 				B4A2501322308A8A00DDBC86 /* Node.swift in Sources */,
 				B4BC6E3E22581BC30016E7DB /* State.swift in Sources */,
 				B4BC6E41225906500016E7DB /* Array+Helpers.swift in Sources */,
+				A751C9B0225FECC100F6A8EF /* DataDomain.swift in Sources */,
 				B4A250152230941D00DDBC86 /* Combine.swift in Sources */,
 				B4A24FFB222C36D200DDBC86 /* main.swift in Sources */,
 				B4A250102230884C00DDBC86 /* Engine.swift in Sources */,
+				A751C9AE225FEB6800F6A8EF /* DataDomainProtocol.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
