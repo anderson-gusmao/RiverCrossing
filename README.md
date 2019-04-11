@@ -3,6 +3,8 @@
 
 [![Build Status](https://travis-ci.org/anderson-gusmao/RiverCrossing.svg?branch=master)](https://travis-ci.org/anderson-gusmao/RiverCrossing)
 
+![](https://github.com/anderson-gusmao/RiverCrossing/blob/master/RiverCrossing/Resources/Picture.png?raw=true)
+
 The missionaries and cannibals problem, and the closely related jealous husbands problem, are classic river-crossing problems. The missionaries and cannibals problem is a well-known toy problem in artificial intelligence, where it was used by Saul Amarel as an example of problem representation.
 
 ### The problem
