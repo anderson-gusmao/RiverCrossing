@@ -62,11 +62,11 @@ class DataDomainTests: XCTestCase {
                      DataDomain.cannibal]
 
         let possibilities = dataDomain.evaluatePossibilities(input: input)
-        XCTAssertEqual(possibilities.count, 2)
-        XCTAssertFalse(possibilities.contains([DataDomain.cannibal]))
+        XCTAssertEqual(possibilities.count, 3)
+        XCTAssertTrue(possibilities.contains([DataDomain.cannibal]))
         XCTAssertTrue(possibilities.contains([DataDomain.missionary]))
         XCTAssertFalse(possibilities.contains([DataDomain.cannibal, DataDomain.cannibal]))
-        XCTAssertFalse(possibilities.contains([DataDomain.cannibal, DataDomain.missionary]))
-        XCTAssertTrue(possibilities.contains([DataDomain.missionary, DataDomain.missionary]))
+        XCTAssertTrue(possibilities.contains([DataDomain.missionary, DataDomain.cannibal]))
+        XCTAssertFalse(possibilities.contains([DataDomain.missionary, DataDomain.missionary]))
     }
 }

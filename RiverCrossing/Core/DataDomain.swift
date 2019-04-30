@@ -13,25 +13,36 @@ final class DataDomain: DataDomainProtocol {
     static var cannibal = "C"
     static var missionary = "M"
 
-    private var availableCombination = [[cannibal], [missionary], [cannibal, cannibal], [cannibal, missionary], [missionary, missionary]]
-
     typealias Model = String
 
     func evaluatePossibilities(input: [String]) -> [[String]] {
         var output = [[String]]()
-
-        for ac in availableCombination {
-            guard ac.count == 2 else {
-                if let first = ac.first, let i = input.firstIndex(of: first) {
-                    output.append([input[i]])
-                }
+        let uniqueValues = Set(allCombinations(input: input))
+        
+        for unique in uniqueValues {
+            let splitted = unique.split(separator: ";").map { String($0) }
+            guard splitted.count == 2, let first = splitted.first, let last = splitted.last else {
+                if let first = splitted.first { output.append([first]) }
                 continue
             }
-            if let first = ac.first, let last = ac.last, let i = input.firstIndex(of: first), let j = input.firstIndex(of: last), input.contains(first) && input.contains(last) {
-                output.append([input[i], input[j]])
+            output.append([first, last])
+        }
+        
+        return output
+    }
+}
+
+extension DataDomain {
+    
+    func allCombinations(input: [String]) -> [String] {
+        var output = [String]()
+        for i in 0...input.length {
+            output.append("\(input[i])")
+            for j in i...input.length {
+                guard j != i else { continue }
+                output.append("\(input[i]);\(input[j])")
             }
         }
-
         return output
     }
 }
