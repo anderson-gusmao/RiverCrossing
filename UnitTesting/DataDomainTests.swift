@@ -69,4 +69,34 @@ class DataDomainTests: XCTestCase {
         XCTAssertTrue(possibilities.contains([DataDomain.missionary, DataDomain.cannibal]))
         XCTAssertFalse(possibilities.contains([DataDomain.missionary, DataDomain.missionary]))
     }
+    
+    func testThreeCannibalsAndOneMissionary() {
+        let input = [DataDomain.cannibal,
+                     DataDomain.cannibal,
+                     DataDomain.cannibal,
+                     DataDomain.missionary]
+        
+        let possibilities = dataDomain.evaluatePossibilities(input: input)
+        XCTAssertEqual(possibilities.count, 4)
+        XCTAssertTrue(possibilities.contains([DataDomain.cannibal, DataDomain.cannibal]))
+        XCTAssertTrue(possibilities.contains([DataDomain.cannibal]))
+        XCTAssertTrue(possibilities.contains([DataDomain.cannibal, DataDomain.missionary]))
+        XCTAssertTrue(possibilities.contains([DataDomain.missionary]))
+        XCTAssertFalse(possibilities.contains([DataDomain.missionary, DataDomain.missionary]))
+    }
+    
+    func testThreeMissionariesAndOneCannibal() {
+        let input = [DataDomain.missionary,
+                     DataDomain.missionary,
+                     DataDomain.missionary,
+                     DataDomain.cannibal]
+        
+        let possibilities = dataDomain.evaluatePossibilities(input: input)
+        XCTAssertEqual(possibilities.count, 4)
+        XCTAssertTrue(possibilities.contains([DataDomain.missionary, DataDomain.missionary]))
+        XCTAssertTrue(possibilities.contains([DataDomain.missionary]))
+        XCTAssertTrue(possibilities.contains([DataDomain.missionary, DataDomain.cannibal]))
+        XCTAssertTrue(possibilities.contains([DataDomain.cannibal]))
+        XCTAssertFalse(possibilities.contains([DataDomain.cannibal, DataDomain.cannibal]))
+    }
 }
